@@ -116,8 +116,7 @@ namespace WindowsFormsControlLibrary1
                     }
                 }
 
-                //Save the document  "C:\Users\DOM\Documents\abc.txt"
-                object filename = @"C:\Users\DOM\Documents\abc.docx";
+                object filename = @"C:\Users\eweis20\Desktop\test.doc";
                 document.SaveAs2(ref filename);
                 document.Close(ref missing, ref missing, ref missing);
                 document = null;
