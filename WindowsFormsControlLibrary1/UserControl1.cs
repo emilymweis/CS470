@@ -53,7 +53,7 @@ namespace WindowsFormsControlLibrary1
                     headerRange.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
                     headerRange.Font.ColorIndex = Microsoft.Office.Interop.Word.WdColorIndex.wdBlue;
                     headerRange.Font.Size = 10;
-                    headerRange.Text = "Header text goes here";
+                    headerRange.Text = "HEADER OF THE TYPE OF THE REPORT";
                 }
 
                 //Add the footers into the document  
@@ -68,13 +68,15 @@ namespace WindowsFormsControlLibrary1
                 }
 
                 //adding text to document  
-                document.Content.SetRange(0, 0);
-                document.Content.Text = "This is test document " + Environment.NewLine;
+                document.Content.SetRange(0, 0);//THIS IS GOING TO USED TO GRAB THE TEXT SELECTED FROM THE DATABASE
+                document.Content.Text = "SIMPLE LINE TO BE USED TO INPUT TEXT INTO THE DOCUMENT" + Environment.NewLine;
+                document.Content.Text = "";
+
 
                 //Add paragraph with Heading 1 style  
                 Microsoft.Office.Interop.Word.Paragraph para1 = document.Content.Paragraphs.Add(ref missing);
-                object styleHeading1 = "Heading 1";
-                para1.Range.set_Style(ref styleHeading1);
+                object styleHeading3 = "Heading 1";
+                para1.Range.set_Style(ref styleHeading3);
                 para1.Range.Text = "Para 1 text";
                 para1.Range.InsertParagraphAfter();
 
@@ -116,7 +118,7 @@ namespace WindowsFormsControlLibrary1
                     }
                 }
 
-                object filename = @"C:\Users\eweis20\Desktop\test.doc";
+                object filename = @"C:\Users\ddevine20\Downloads\reports\Test.doc";
                 document.SaveAs2(ref filename);
                 document.Close(ref missing, ref missing, ref missing);
                 document = null;
